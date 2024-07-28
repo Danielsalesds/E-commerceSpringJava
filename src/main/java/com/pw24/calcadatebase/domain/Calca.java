@@ -27,6 +27,7 @@ public class Calca {
     String CalcaSize;
     String genero;
     String imageUri;
+    String qtd;
     //regra de negocio para nome da calça
     public void upperCaseCalcaName(){
         calcaName.toUpperCase();
