@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem de Calças</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:fragment="calcaTable" class="container">
+        <h2>Listagem de Calças</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome da Calça</th>
+                    <th>Tamanho da Calça</th>
+                    <th>Gênero</th>
+                    <th>Imagem</th>
+                    <th>Quantidade</th>
+                    <th>Editar</th>
+                </tr>
+            </thead>
+            <tbody th:each="calca : ${calcas}">
+                <tr>
+                    <td th:text="${calca.id}"></td>
+                    <td th:text="${calca.calcaName}"></td>
+                    <td th:text="${calca.calcaSize}"></td>
+                    <td th:text="${calca.genero}"></td>
+                    <td>
+                        <img th:src="@{${calca.imageUri}}" alt="Imagem da Calça" class="img-thumbnail" style="width: 100px;">
+                    </td>
+                    <td th:text="${calca.qtd}"></td>
+                    <td>
+                        <a th:href="@{'/editPage/'+${calca.id}}" class="btn btn-warning">Alterar</a>
+                        <a th:href="@{'/processDelete/'+${calca.id}}" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script th:src="@{/js/jquery-3.3.1.slim.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h2>Cadastro de Calça</h2>
-        <form th:action="@{/processCadastroPage}" method="post" enctype="multipart/form-data" th:object="${calca}">
+        <form action="#" th:action="@{/processCadastroPage}" method="post" enctype="multipart/form-data" th:object="${calca}">
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -42,8 +42,11 @@
             </table>
 
             <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <a href="/"><button type="button" class="btn btn-primary">Voltar</button></a>
         </form>
     </div>
+    <!--Incluindo o fragmento calcaTable  -->
+    <div th:replace="~{fragments/tableCalca :: calcaTable}"></div>
 
     <script th:src="@{/js/jquery-3.3.1.slim.min.js}"></script>
     <script th:src="@{/js/popper.min.js}"></script>

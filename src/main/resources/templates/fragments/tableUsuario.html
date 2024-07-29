@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fragmentos de Usuário</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:fragment="userTable" class="container">
+        <h2>Listagem de Usuários</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome de Usuário</th>
+                    <th>Senha</th>
+                    <th>Administrador</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody th:each="user : ${users}">
+                <tr>
+                    <td th:text="${user.id}"></td>
+                    <td th:text="${user.usename}"></td>
+                    <td th:text="${user.password}"></td>
+                    <td th:text="${user.isAdmin ? 'Sim' : 'Não'}"></td>
+                    <td>
+                        <a th:href="@{'/alterar?id=' + ${user.id}}" class="btn btn-warning">Alterar</a>
+                        <a th:href="@{'/excluir?id=' + ${user.id}}" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
