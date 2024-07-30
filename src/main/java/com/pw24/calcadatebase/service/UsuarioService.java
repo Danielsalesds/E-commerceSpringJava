@@ -30,7 +30,9 @@ public class UsuarioService {
      }
      //Criando uma Usuario e aplicando regra de negocio para nome da nome de Usuario
      public Usuario create(Usuario usuario){
+        usuario.usuarioAdmin();
         usuario.upperCaseUsuarioName();
+       
         return repository.save(usuario);
     }
     //Lista todas as Usuario cadastradas no banco de dados.

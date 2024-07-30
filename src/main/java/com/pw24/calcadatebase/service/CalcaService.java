@@ -31,7 +31,7 @@ public class CalcaService {
      }
      //Criando uma calça e aplicando regra de negocio para nome da calça
      public Calca create(Calca calca){
-        //calca.upperCaseCalcaName();
+        calca.upperCaseCalcaName();
         return repository.save(calca);
     }
     //Lista todas as Calças cadastradas no banco de dados.

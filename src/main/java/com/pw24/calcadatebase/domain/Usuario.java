@@ -28,11 +28,27 @@ public class Usuario {
     @NotBlank(message = "O campo (Senha) não pode estar em branco.")
     String password;
 
-    @NotBlank(message = "O campo não pode ser Nulo")
+   // @NotBlank(message = "O campo não pode ser Nulo")
     Boolean isAdmin;
+
+    String dateNascimento;
+    String email;
+    String adminIs;
 
     public void upperCaseUsuarioName(){
         usename.toUpperCase();
     }
+
+    public void usuarioAdmin(){
+        if (isAdmin != null) {
+            if (isAdmin==true) {
+                adminIs ="sim";
+            }else{
+                adminIs="não";
+            }
+            
+        }
+    }
+
     
 }

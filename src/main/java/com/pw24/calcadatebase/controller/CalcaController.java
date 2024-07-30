@@ -50,7 +50,6 @@ public class CalcaController {
         //if(errors.hasErrors()){
          //   return new ModelAndView("calcacadastro");
         //}
-        calca.upperCaseCalcaName();
         service.create(calca);
         
         ModelAndView modelAndView = new ModelAndView("calcacadastro");
